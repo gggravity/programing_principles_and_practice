@@ -23,6 +23,7 @@ try
 
 	box2.set_style(Line_style(Line_style::solid, 1));
 	box2.set_color(Color::dark_yellow);
+	box2.move(200,200);
 
 	win.attach(box1);
 	win.attach(box2);

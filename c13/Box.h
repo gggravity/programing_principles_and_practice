@@ -26,14 +26,6 @@ namespace Shapes
 
 				void set_width (int width);
 
-				[[nodiscard]] int x () const;
-
-				void set_x (int x);
-
-				[[nodiscard]] int y () const;
-
-				void set_y (int y);
-
 				int corners () const;
 
 				void set_corners (int corners);
@@ -42,8 +34,6 @@ namespace Shapes
 				void draw_lines () const override;
 
 			private:
-				int m_x {0};
-				int m_y {0};
 				int m_height {0};
 				int m_width {0};
 				int m_corners {0};

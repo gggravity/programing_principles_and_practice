@@ -12,7 +12,7 @@ using namespace Graph_lib;
 int main ()
 try
   {
-	Simple_window win(Point {0, 0}, x_max(), y_max(), "Exercise 1");
+	Simple_window win(Point {0, 0}, x_max(), y_max(), "Exercise 2");
 
 	Shapes::Box box1 = {Point {100, 150}, Point {300, 350}, 10};
 

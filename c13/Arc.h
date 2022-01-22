@@ -34,9 +34,9 @@ namespace Shapes
 				void set_width (int width);
 
 			private:
-				// The two angles are measured in degrees counterclockwise from
-				// 3'o clock and are the starting and ending angle of the arc,
-				// a2 must be greater or equal to a1.
+				/// The two angles are measured in degrees counterclockwise from
+				/// 3'o clock and are the starting and ending angle of the arc,
+				/// a2 must be greater or equal to a1.
 
 				double m_angle_1;
 				double m_angle_2;

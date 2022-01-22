@@ -23,10 +23,24 @@ try
 
 	box2.set_style(Line_style(Line_style::solid, 1));
 	box2.set_color(Color::dark_yellow);
-	box2.move(200,200);
+	box2.move(200, 200);
+
+	Shapes::Box box3 = {Point {200, 240}, 400, 200, 20};
+
+	box3.set_style(Line_style(Line_style::dot, 2));
+	box3.set_color(Color::yellow);
+	box3.move(500, 100);
+
+	Shapes::Box box4 = {Point {200, 240}, 200, 400, 20};
+
+	box4.set_style(Line_style(Line_style::dashdotdot, 3));
+	box4.set_color(Color::blue);
+	box4.move(300, -100);
 
 	win.attach(box1);
 	win.attach(box2);
+	win.attach(box3);
+	win.attach(box4);
 	win.wait_for_button();
   }
 catch (exception &e)

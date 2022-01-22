@@ -19,11 +19,10 @@ namespace Shapes
 	  }
 
 	Box::Box (Graph_lib::Point point, int height, int width, int corners)
+	: m_height{height}, m_width{width}
 	  {
-		// TODO need to fix the height, width and corners.
-//		add(point);
-//		add({point.x + width, point.y + height});
 		add(point);
+		add({point.x + width, point.y + height});
 		set_corners(corners);
 	  }
 

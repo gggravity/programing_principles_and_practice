@@ -31,28 +31,58 @@ namespace Shapes
 	  {
 		if (corners() > 0 && corners() < height() / 2 && corners() < width() / 2)
 		  {
-			cout << "corners: " << corners() << " ";
-			cout << "0x: " << point(0).x << " ";
-			cout << "0y: " << point(0).y << " ";
-			cout << "1x: " << point(1).x << " ";
-			cout << "1y: " << point(1).y << " ";
-			cout << "height: " << height() << " ";
-			cout << "width: " << width() << endl;
-//			fl_line(x(), y() + corners(), x(), y() + height() - corners());
-//			fl_line(x() + corners(), y() + height(), x() + width() - corners(), y() + height());
-//			fl_line(x() + corners(), y(), x() + width() - corners(), y());
-//			fl_line(x() + width(), y() + corners(), x() + width(), y() + height() - corners());
-//
-//			fl_arc(x(), y(), corners() * 2, corners() * 2, 90, 180);
-//			fl_arc(x(), y() + height() - corners() * 2, corners() * 2, corners() * 2, 180, 270);
-//			fl_arc(x() + width() - 2 * corners(), y() + height() - corners() * 2, corners() * 2, corners() * 2, 270, 0);
-//			fl_arc(x() + width() - 2 * corners(), y(), corners() * 2, corners() * 2, 0, 90);
+			// add lines
+			fl_line(
+				point(0).x,
+				point(0).y + corners(),
+				point(0).x,
+				point(1).y - corners()
+			);
+			fl_line(
+				point(0).x + corners(),
+				point(1).y,
+				point(1).x - corners(),
+				point(1).y
+			);
+			fl_line(
+				point(1).x - corners(),
+				point(0).y,
+				point(0).x + corners(),
+				point(0).y
+			);
+			fl_line(
+				point(1).x,
+				point(0).y + corners(),
+				point(1).x,
+				point(1).y - corners()
+			);
 
-			// add corner calculation
-			fl_line(point(0).x, point(0).y, point(0).x, point(1).y);
-			fl_line(point(0).x, point(1).y, point(1).x, point(1).y);
-			fl_line(point(1).x, point(0).y, point(0).x, point(0).y);
-			fl_line(point(1).x, point(0).y, point(1).x, point(1).y);
+			// add the arcs
+			fl_arc(
+				point(0).x,
+				point(0).y,
+				corners() * 2,
+				corners() * 2, 90, 180
+			);
+			fl_arc(
+				point(0).x,
+				point(0).y + height() - corners() * 2,
+				corners() * 2,
+				corners() * 2,
+				180, 270
+			);
+			fl_arc(
+				point(0).x + width() - 2 * corners(),
+				point(0).y + height() - corners() * 2,
+				corners() * 2, corners() * 2,
+				270, 0
+			);
+			fl_arc(
+				point(0).x + width() - 2 * corners(),
+				point(0).y,
+				corners() * 2,
+				corners() * 2, 0, 90
+			);
 		  }
 		else
 		  {

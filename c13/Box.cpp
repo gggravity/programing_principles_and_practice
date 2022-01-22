@@ -28,7 +28,7 @@ namespace Shapes
 
 	void Box::draw_lines () const
 	  {
-		if (corners() > 0 && corners() < height() / 2 && corners() < width() / 2)
+		if (corners() >= 0 && corners() < height() / 2 && corners() < width() / 2)
 		  {
 			// add lines
 			fl_line(

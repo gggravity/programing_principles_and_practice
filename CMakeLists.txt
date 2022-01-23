@@ -16,6 +16,6 @@ add_executable(programing_principles_and_practice
         c12/Window.h
         c12/Window.cpp
 
-        c13/e4.cpp c13/e4_source.cpp c13/e4_source.h)
+        c13/e5.cpp c13/Circle.cpp c13/Circle.h c13/Ellipse.cpp c13/Ellipse.h)
 
 target_link_libraries(programing_principles_and_practice fltk -lfltk_images)

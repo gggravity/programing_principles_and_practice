@@ -16,7 +16,6 @@ add_executable(programing_principles_and_practice
         c12/Window.h
         c12/Window.cpp
 
-        c13/e3.cpp
-        c13/Arrow.cpp c13/Arrow.h)
+        c13/e4.cpp c13/e4_source.cpp c13/e4_source.h)
 
 target_link_libraries(programing_principles_and_practice fltk -lfltk_images)

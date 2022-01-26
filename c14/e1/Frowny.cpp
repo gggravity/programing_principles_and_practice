@@ -17,7 +17,6 @@ void Frowny::draw_lines () const
 	Circle::draw_lines();
 
 	fl_begin_line();
-//	fl_arc(center().x, center().y - radius() / 8.0, radius() * 3.0 / 5.0, 220, 320);
 	fl_arc(center().x, center().y + radius() * 0.75, radius() * 3.0 / 5.0, 40, 140);
 	fl_end_line();
 

@@ -3,7 +3,7 @@ project(programing_principles_and_practice)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_subdirectory("${PROJECT_SOURCE_DIR}/c13/e16" "${PROJECT_SOURCE_DIR}/c13/e16")
+add_subdirectory("${PROJECT_SOURCE_DIR}/c14/e1" "${PROJECT_SOURCE_DIR}/c14/e1")
 
 
 #find_package(FLTK REQUIRED)

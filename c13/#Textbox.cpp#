@@ -1,0 +1,81 @@
+//
+// Created by martin on 23/01/2022.
+//
+
+#include "Textbox.h"
+#include <utility>
+
+using namespace std;
+
+Shapes::Textbox::Textbox (Graph_lib::Point center, std::string text)
+	: Graph_lib::Text(center, text),
+	  m_text(std::move(text))
+  {
+	add(center);
+  }
+
+void Shapes::Textbox::draw_lines () const
+  {
+	int original_font = fl_font();
+	int original_size = fl_size();
+	fl_font(font().as_int(), font_size());
+	fl_draw(text().c_str(), point(0).x, point(0).y);
+	fl_font(original_font, original_size);
+
+//	fl_text_extents(const char *c, int &dx, int &dy, int &w, int &h);
+	int dx, dy, w, h;
+	fl_text_extents(text().c_str(), dx, dy, w, h);
+//	fl_color(fill_color().as_int());
+	fl_rect(point(0).x + dx - 10, point(0).y + dy - 10, w + 20, h + 20);
+
+  }
+
+const std::string &Shapes::Textbox::text () const
+  {
+	return m_text;
+  }
+
+double Shapes::Textbox::height () const
+  {
+	return m_height;
+  }
+
+void Shapes::Textbox::set_height (double height)
+  {
+	Textbox::m_height = height;
+  }
+
+double Shapes::Textbox::width () const
+  {
+	return m_width;
+  }
+
+void Shapes::Textbox::set_width (double width)
+  {
+	Textbox::m_width = width;
+  }
+
+const Graph_lib::Font &Shapes::Textbox::font () const
+  {
+	return m_font;
+  }
+
+void Shapes::Textbox::set_font (const Graph_lib::Font &font)
+  {
+	Textbox::m_font = font;
+  }
+
+int Shapes::Textbox::font_size () const
+  {
+	return m_font_size;
+  }
+
+void Shapes::Textbox::set_font_size (int font_size)
+  {
+	Textbox::m_font_size = font_size;
+  }
+
+//void Shapes::Textbox::set_fill_color (Graph_lib::Color color)
+//  {
+//	fcolor = color;
+//  }

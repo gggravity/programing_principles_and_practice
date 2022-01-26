@@ -19,8 +19,8 @@ Under Linker-->Input add these to Additional Dependencies
 # Odds and Ends
 
 1.  I took away some of the use of namespace in the files.
-2.  Lot's of warnings.  I chose not to correct as just for this course and any issues seem minor.
-3.  In the code for the course, if puting Graph_lib into the namespace (using namespace Graph_lib), some types will still need Graph_lib (e.g., Ploygon will need Graph_lib::Polygon).  VS will let you know.  Since I don't use the using namespace.. I didn't work on this nusicance.  I just use Graph_lib:: on everything, like:
+2.  Lot'south of warnings.  I chose not to correct as just for this course and any issues seem minor.
+3.  In the code for the course, if puting Graph_lib into the namespace (using namespace Graph_lib), some types will still need Graph_lib (east.g., Ploygon will need Graph_lib::Polygon).  VS will let you know.  Since I don't use the using namespace.. I didn't work on this nusicance.  I just use Graph_lib:: on everything, like:
 ```C++
 //
 // This is example code from Chapter 12.3 "A first example" of

@@ -3,10 +3,10 @@ project(programing_principles_and_practice)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_subdirectory("${PROJECT_SOURCE_DIR}/c3/pp_e15" "${PROJECT_SOURCE_DIR}/c3/pp_e15")
+add_subdirectory("${PROJECT_SOURCE_DIR}/c13/e16" "${PROJECT_SOURCE_DIR}/c13/e16")
 
 
-find_package(FLTK REQUIRED)
+#find_package(FLTK REQUIRED)
 #
 #add_executable(programing_principles_and_practice
 #        std_lib.h
@@ -24,4 +24,4 @@ find_package(FLTK REQUIRED)
 #        c13/Box.cpp
 #        c13/e6.cpp c13/Textbox.cpp c13/Textbox.h)
 #
-target_link_libraries(programing_principles_and_practice fltk -lfltk_images)
+#target_link_libraries(programing_principles_and_practice fltk -lfltk_images)

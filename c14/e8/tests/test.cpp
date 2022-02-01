@@ -1,9 +1,9 @@
 // 010-TestCase.cpp
 // And write tests in the same file:
 #include <catch2/catch_test_macros.hpp>
-#include "../../GUI/Simple_window.h"
+#include "../../../GUI/Simple_window.h"
 //#include "../../GUI/std_lib.h"
-#include "Octagon.h"
+#include "../Octagon.h"
 
 using namespace std;
 using namespace Graph_lib;

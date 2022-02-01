@@ -1,5 +1,5 @@
-#include "../../GUI/Simple_window.h"
-#include "../../GUI/std_lib.h"
+#include "Simple_window.h"
+#include "std_lib.h"
 #include "Octagon.h"
 
 using namespace std;

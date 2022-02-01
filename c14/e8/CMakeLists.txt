@@ -12,6 +12,10 @@ FetchContent_Declare(
 list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
 FetchContent_MakeAvailable(Catch2)
 
+#file(GLOB SOURCES
+#        header-folder/*.h
+#        source-folder/*.cpp
+#        )
 
 set(COMMON_SOURCES ../../GUI/Graph.h
         ../../GUI/Graph.cpp

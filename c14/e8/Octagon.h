@@ -5,7 +5,7 @@
 #ifndef _OCTAGON_H_
 #define _OCTAGON_H_
 
-#include "../../GUI/Graph.h"
+#include "Graph.h"
 
 class Octagon
 	:

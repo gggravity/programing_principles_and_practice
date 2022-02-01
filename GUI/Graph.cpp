@@ -6,9 +6,10 @@
 #include <stdexcept>
 #include <fstream>
 
-namespace Graph_lib {
+namespace Graph_lib
+  {
 
-	void Shape::draw_lines() const
+	void Shape::draw_lines () const
 	  {
 		if (color().visibility() && 1 < points.size())
 		  {    // draw sole pixel?
@@ -19,21 +20,20 @@ namespace Graph_lib {
 		  }
 	  }
 
-	void Shape::draw() const
+	void Shape::draw () const
 	  {
 		Fl_Color oldc = fl_color();
 		// there is no good portable way of retrieving the current style
 		fl_color(lcolor.as_int());
 		fl_line_style(ls.style(), ls.width());
 		draw_lines();
-		fl_color(oldc);	// reset color (to pevious) and style (to default)
+		fl_color(oldc);    // reset color (to previous) and style (to default)
 		fl_line_style(0);
 	  }
 
-
 	// does two lines (p1,p2) and (p3,p4) intersect?
 	// if se return the distance of the intersect point as distances from p1
-	inline std::pair<double, double> line_intersect(Point p1, Point p2, Point p3, Point p4, bool& parallel)
+	inline std::pair<double, double> line_intersect (Point p1, Point p2, Point p3, Point p4, bool &parallel)
 	  {
 		double x1 = p1.x;
 		double x2 = p2.x;
@@ -55,20 +55,21 @@ namespace Graph_lib {
 										 ((x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3)) / denom);
 	  }
 
-
 	//intersection between two line segments
 	//Returns true if the two segments intersect,
 	//in which case intersection is set to the point of intersection
-	bool line_segment_intersect(Point p1, Point p2, Point p3, Point p4, Point& intersection) {
+	bool line_segment_intersect (Point p1, Point p2, Point p3, Point p4, Point &intersection)
+	  {
 		bool parallel;
 		std::pair<double, double> u = line_intersect(p1, p2, p3, p4, parallel);
-		if (parallel || u.first < 0 || u.first > 1 || u.second < 0 || u.second > 1) return false;
+		if (parallel || u.first < 0 || u.first > 1 || u.second < 0 || u.second > 1)
+		  { return false; }
 		intersection.x = p1.x + u.first * (p2.x - p1.x);
 		intersection.y = p1.y + u.first * (p2.y - p1.y);
 		return true;
 	  }
 
-	void Polygon::add(Point p)
+	void Polygon::add (Point p)
 	  {
 		int np = number_of_points();
 
@@ -84,8 +85,8 @@ namespace Graph_lib {
 			  }
 		  }
 
-		for (int i = 1; i < np - 1; ++i)
-		  {    // check that new segment doesn't interset and old point
+		for (int i = 1 ; i < np - 1 ; ++i)
+		  {    // check that new segment doesn't intersect and old point
 			Point ignore(0, 0);
 			if (line_segment_intersect(point(np - 1), p, point(i - 1), point(i), ignore))
 			  {
@@ -96,16 +97,17 @@ namespace Graph_lib {
 		Closed_polyline::add(p);
 	  }
 
-
-	void Polygon::draw_lines() const
+	void Polygon::draw_lines () const
 	  {
-		if (number_of_points() < 3) std::cerr << ("less than 3 points in a Polygon");
+		if (number_of_points() < 3)
+		  { std::cerr << ("less than 3 points in a Polygon"); }
 		Closed_polyline::draw_lines();
 	  }
 
-	void Open_polyline::draw_lines() const
+	void Open_polyline::draw_lines () const
 	  {
-		if (fill_color().visibility()) {
+		if (fill_color().visibility())
+		  {
 			fl_color(fill_color().as_int());
 			fl_begin_complex_polygon();
 			for (int i = 0 ; i < number_of_points() ; ++i)
@@ -122,7 +124,7 @@ namespace Graph_lib {
 		  }
 	  }
 
-	void Closed_polyline::draw_lines() const
+	void Closed_polyline::draw_lines () const
 	  {
 		Open_polyline::draw_lines();
 
@@ -132,7 +134,7 @@ namespace Graph_lib {
 		  }
 	  }
 
-	void Shape::move(int dx, int dy)
+	void Shape::move (int dx, int dy)
 	  {
 		for (unsigned int i = 0 ; i < points.size() ; ++i)
 		  {
@@ -141,7 +143,7 @@ namespace Graph_lib {
 		  }
 	  }
 
-	void Lines::draw_lines() const
+	void Lines::draw_lines () const
 	  {
 		if (number_of_points() % 2 == 1)
 		  { std::cerr << ("odd number of points in set of lines"); }
@@ -154,7 +156,7 @@ namespace Graph_lib {
 		  }
 	  }
 
-	void Text::draw_lines() const
+	void Text::draw_lines () const
 	  {
 		int ofnt = fl_font();
 		int osz = fl_size();
@@ -180,7 +182,7 @@ namespace Graph_lib {
 		  }
 	  }
 
-	void Rectangle::draw_lines() const
+	void Rectangle::draw_lines () const
 	  {
 		if (fill_color().visibility())
 		  {    // fill
@@ -196,9 +198,8 @@ namespace Graph_lib {
 		  }
 	  }
 
-
-	Axis::Axis(Orientation d, Point xy, int length, int n, std::string lab)
-		:label(Point(0, 0), lab)
+	Axis::Axis (Orientation d, Point xy, int length, int n, std::string lab)
+		: label(Point(0, 0), lab)
 	  {
 		if (length < 0)
 		  { std::cerr << ("bad axis length"); }
@@ -245,29 +246,28 @@ namespace Graph_lib {
 		  }
 	  }
 
-	void Axis::draw_lines() const
+	void Axis::draw_lines () const
 	  {
-		Shape::draw_lines();	// the line
-		notches.draw();	// the notches may have a different color from the line
-		label.draw();	// the label may have a different color from the line
+		Shape::draw_lines();    // the line
+		notches.draw();    // the notches may have a different color from the line
+		label.draw();    // the label may have a different color from the line
 	  }
 
-
-	void Axis::set_color(Color c)
+	void Axis::set_color (Color c)
 	  {
 		Shape::set_color(c);
 		notches.set_color(c);
 		label.set_color(c);
 	  }
 
-	void Axis::move(int dx, int dy)
+	void Axis::move (int dx, int dy)
 	  {
 		Shape::move(dx, dy);
 		notches.move(dx, dy);
 		label.move(dx, dy);
 	  }
 
-	void Circle::draw_lines() const
+	void Circle::draw_lines () const
 	  {
 		if (fill_color().visibility())
 		  {    // fill
@@ -283,8 +283,7 @@ namespace Graph_lib {
 		  }
 	  }
 
-
-	void Ellipse::draw_lines() const
+	void Ellipse::draw_lines () const
 	  {
 		if (fill_color().visibility())
 		  {    // fill
@@ -300,7 +299,7 @@ namespace Graph_lib {
 		  }
 	  }
 
-	void draw_mark(Point xy, char c)
+	void draw_mark (Point xy, char c)
 	  {
 		static const int dx = 4;
 		static const int dy = 4;
@@ -308,7 +307,7 @@ namespace Graph_lib {
 		fl_draw(m.c_str(), xy.x - dx, xy.y + dy);
 	  }
 
-	void Marked_polyline::draw_lines() const
+	void Marked_polyline::draw_lines () const
 	  {
 		Open_polyline::draw_lines();
 		for (int i = 0 ; i < number_of_points() ; ++i)
@@ -328,7 +327,7 @@ namespace Graph_lib {
 
 	std::map<std::string, Suffix::Encoding> suffix_map;
 
-	int init_suffix_map()
+	int init_suffix_map ()
 	  {
 		suffix_map["jpg"] = Suffix::jpg;
 		suffix_map["JPG"] = Suffix::jpg;
@@ -363,20 +362,24 @@ namespace Graph_lib {
 		return false;
 	  }
 
-	// somewhat overelaborate constructor
+	// somewhat over-elaborate constructor
 	// because errors related to image files can be such a pain to debug
-	Image::Image(Point xy, std::string s, Suffix::Encoding e)
-		:w(0), h(0), fn(xy, "")
+	Image::Image (Point xy, std::string s, Suffix::Encoding e)
+		: w(0),
+		  h(0),
+		  fn(xy, "")
 	  {
 		add(xy);
 
-		if (!can_open(s)) {
+		if (!can_open(s))
+		  {
 			fn.set_label("cannot open \"" + s + '\"');
-			p = new Bad_image(30, 20);	// the "error image"
+			p = new Bad_image(30, 20);    // the "error image"
 			return;
 		  }
 
-		if (e == Suffix::none) e = get_encoding(s);
+		if (e == Suffix::none)
+		  { e = get_encoding(s); }
 
 		switch (e)
 		  {
@@ -395,7 +398,7 @@ namespace Graph_lib {
 		  }
 	  }
 
-	void Image::draw_lines() const
+	void Image::draw_lines () const
 	  {
 		if (fn.label() != "")
 		  { fn.draw_lines(); }

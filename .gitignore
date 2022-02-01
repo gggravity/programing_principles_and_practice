@@ -3,6 +3,5 @@
 **/Testing
 **/.idea
 *.exe
-CMakeLists.txt
 cmake_install.cmake
 **/CMakeFiles

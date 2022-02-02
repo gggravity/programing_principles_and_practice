@@ -7,8 +7,9 @@
 Group::Group ()
   {
 	init_board();
-	init_blacks();
 	init_reds();
+	init_blacks();
+
   }
 
 void Group::init_board ()
@@ -42,16 +43,9 @@ void Group::move (int dx, int dy)
 
 void Group::draw_lines () const
   {
-	for (int i {0} ; i < m_board.size() ; ++i)
-	  {
-		m_board[i].draw();
-	  }
-
-	for (int i {0} ; i < m_blacks.size() ; ++i)
-	  {
-		m_blacks[i].draw();
-	  }
-
+	draw_board();
+	draw_blacks();
+	draw_reds();
 	Shape::draw_lines();
   }
 
@@ -102,8 +96,32 @@ void Group::init_reds ()
 				continue;
 			  }
 
-			m_blacks.push_back(c);
+			m_reds.push_back(c);
 		  }
+	  }
+  }
+
+void Group::draw_board () const
+  {
+	for (int i {0} ; i < m_board.size() ; ++i)
+	  {
+		m_board[i].draw();
+	  }
+  }
+
+void Group::draw_blacks () const
+  {
+	for (int i {0} ; i < m_blacks.size() ; ++i)
+	  {
+		m_blacks[i].draw();
+	  }
+  }
+
+void Group::draw_reds () const
+  {
+	for (int i {0} ; i < m_reds.size() ; ++i)
+	  {
+		m_reds[i].draw();
 	  }
   }
 

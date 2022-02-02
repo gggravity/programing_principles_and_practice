@@ -15,10 +15,10 @@ struct Group:
 	  {
 			Group ();
 
-			virtual void move (int dx, int dy) override;
+			void move (int dx, int dy) override;
 
 		protected:
-			virtual void draw_lines () const override;
+			void draw_lines () const override;
 
 		private:
 			static constexpr int board_size {10};
@@ -29,6 +29,12 @@ struct Group:
 			void init_blacks ();
 
 			void init_reds ();
+
+			void draw_board () const;
+
+			void draw_blacks () const;
+
+			void draw_reds () const;
 
 			Graph_lib::Vector_ref<Shape> m_board;
 			Graph_lib::Vector_ref<Graph_lib::Circle> m_blacks;

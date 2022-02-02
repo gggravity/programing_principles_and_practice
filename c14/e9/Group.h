@@ -10,12 +10,24 @@
 
 using namespace std;
 
+enum class Direction
+	{
+		UP, DOWN, LEFT, RIGHT
+	};
+
+enum class Piece_color
+	{
+		RED, BLACK
+	};
+
 struct Group:
 	Graph_lib::Shape
 	  {
 			Group ();
 
 			void move (int dx, int dy) override;
+
+			bool move_piece (Direction direction, Piece_color color, int piece_number);
 
 		protected:
 			void draw_lines () const override;

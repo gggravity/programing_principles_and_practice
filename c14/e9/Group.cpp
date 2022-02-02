@@ -4,6 +4,8 @@
 
 #include "Group.h"
 
+using namespace std;
+
 Group::Group ()
   {
 	init_board();
@@ -61,7 +63,7 @@ void Group::init_blacks ()
 
 			if ((i + j) % 2)
 			  {
-				c->set_fill_color(Graph_lib::Color::dark_yellow);
+				c->set_fill_color(Graph_lib::Color::black);
 				c->set_color(Graph_lib::Color::invisible);
 			  }
 			else
@@ -123,5 +125,61 @@ void Group::draw_reds () const
 	  {
 		m_reds[i].draw();
 	  }
+  }
+
+bool Group::move_piece (Direction direction, Piece_color color, int piece_number)
+  {
+	if (piece_number >= m_blacks.size() || piece_number >= m_reds.size())
+	  {
+		throw runtime_error("Not enough pieces.");
+	  }
+
+	switch (direction)
+	  {
+		case Direction::UP:
+		  if (color == Piece_color::BLACK)
+			{
+			  m_blacks[piece_number].move(0, -2 * box_size);
+			}
+		  else
+			{
+			  m_reds[piece_number].move(0, -2 * box_size);
+			}
+		break;
+		case Direction::DOWN:
+		  if (color == Piece_color::BLACK)
+			{
+			  m_blacks[piece_number].move(0, 2 * box_size);
+			}
+		  else
+			{
+			  m_reds[piece_number].move(0, 2 * box_size);
+			}
+		break;
+		case Direction::LEFT:
+		  if (color == Piece_color::BLACK)
+			{
+			  m_blacks[piece_number].move(-2 * box_size, 0);
+			}
+		  else
+			{
+			  m_reds[piece_number].move(-2 * box_size, 0);
+			}
+		break;
+		case Direction::RIGHT:
+		  if (color == Piece_color::BLACK)
+			{
+			  m_blacks[piece_number].move(2 * box_size, 0);
+			}
+		  else
+			{
+			  m_reds[piece_number].move(2 * box_size, 0);
+			}
+		break;
+		default:
+		  throw runtime_error("Wrong direction.");
+	  }
+
+	return false;
   }
 

@@ -11,18 +11,31 @@
 using namespace std;
 using namespace Graph_lib;
 
+struct Node
+    {
+        int data;
+        unique_ptr<Node> left = nullptr;
+        unique_ptr<Node> right = nullptr;
+
+        explicit Node (int data) : data(data)
+          { }
+
+    };
+
 class Binary_tree : public Shape
       {
       public:
             Binary_tree ();
 
-            explicit Binary_tree (int value);
+//            explicit Binary_tree (int levels);
 
-            static void print (unique_ptr<Binary_tree> &btree, int indent = 0);
+            void create_levels (unique_ptr<Node> &node, int levels, int depth = 0);
 
-            int data;
-            unique_ptr<Binary_tree> left { };
-            unique_ptr<Binary_tree> right { };
+            static void print (unique_ptr<Node> &node, int indent = 0);
+
+            unique_ptr<struct Node> root = make_unique<Node>(1);
+
+            int counter = 1;
 
       private:
 

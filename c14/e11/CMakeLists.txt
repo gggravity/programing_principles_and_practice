@@ -17,7 +17,8 @@ find_package(FLTK REQUIRED)
 #        source-folder/*.cpp
 #        )
 
-set(COMMON_SOURCES ../../GUI/Graph.h
+set(COMMON_SOURCES
+        ../../GUI/Graph.h
         ../../GUI/Graph.cpp
         ../../GUI/Gui.h
         ../../GUI/GUI.cpp
@@ -32,7 +33,7 @@ set(COMMON_SOURCES ../../GUI/Graph.h
 #enable_testing()
 
 set(TARGET_SOURCES main.cpp)
-set(TEST_SOURCES tests/test.cpp)
+#set(TEST_SOURCES tests/test.cpp)
 add_executable(application ${COMMON_SOURCES} ${TARGET_SOURCES})
 #add_executable(tests ${COMMON_SOURCES} ${TEST_SOURCES})
 

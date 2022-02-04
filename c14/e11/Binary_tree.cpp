@@ -4,36 +4,59 @@
 
 #include "Binary_tree.h"
 
-Binary_tree::Binary_tree () : data { 0 },
-                              left { nullptr },
-                              right { nullptr }
+Binary_tree::Binary_tree ()
   {
+    root->data = counter;
+    root->left = nullptr;
+    root->right = nullptr;
   }
 
-Binary_tree::Binary_tree (int value) : data { value },
-                                       left { nullptr },
-                                       right { nullptr }
-  {
-  }
+//Binary_tree::Binary_tree (int levels)
+//  {
+//    root->data = levels;
+//    root->left = nullptr;
+//    root->right = nullptr;
+//  }
 
-void Binary_tree::print (unique_ptr<Binary_tree> &btree, int indent)
+void Binary_tree::print (unique_ptr<Node> &node, int indent)
   {
-    if (btree != nullptr)
+    if (node != nullptr)
       {
-        if (btree->left)
+
+        if (node->left)
           {
-            print(btree->left, indent + 4);
+            print(node->left, indent + 8);
           }
-        if (btree->right)
+        if (node->right)
           {
-            print(btree->right, indent + 4);
+            print(node->right, indent + 8);
           }
         if (indent)
           {
             cout << setw(indent) << ' ';
           }
-        cout << btree->data << "\n ";
+        printf("%02d\n", node->data);
       }
+  }
+
+void Binary_tree::create_levels (unique_ptr<Node> &node, int levels, int depth)
+  {
+//    cout << "levels: " << levels << endl;
+//    cout << "depth: " << depth << endl;
+    depth++;
+
+    if (depth > levels)
+      {
+        return;
+      }
+
+    node->left = make_unique<Node>(++counter);
+    node->right = make_unique<Node>(++counter);
+
+//    cout << "depth: " << depth << "     count: " << counter << endl;
+
+    create_levels(node->left, levels, depth);
+    create_levels(node->right, levels, depth);
   }
 
 

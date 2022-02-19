@@ -4,7 +4,7 @@ project(programing_principles_and_practice)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(programing_principles_and_practice
-        c17/e6.cpp)
+        c17/e7.cpp)
 
 #
 #include_directories(${CMAKE_SOURCE_DIR}/GUI)

@@ -9,7 +9,7 @@ class Link
       public:
             string value;
 
-            Link (string v, Link *p = nullptr, Link *s = nullptr);
+            Link (const string &v, Link *p = nullptr, Link *s = nullptr);
 
             Link *insert (Link *n);
 
@@ -17,13 +17,15 @@ class Link
 
             Link *erase ();
 
-            Link *find (const string &s) const;
+            const Link *find (const string &s) const;
 
             Link *advance (int n) const;
 
             Link *next () const;
 
             Link *previous () const;
+
+//            void print_all ();
 
       private:
             Link *prev;
@@ -32,3 +34,4 @@ class Link
       };
 
 
+void print_all (Link *p);

@@ -9,7 +9,7 @@ class Link
       public:
             string value;
 
-            Link (const string &v, Link *p = nullptr, Link *s = nullptr);
+            God (const string &v, Link *p = nullptr, Link *s = nullptr);
 
             Link *insert (Link *n);
 

@@ -17,13 +17,15 @@ class Link
 
             Link *erase ();
 
-            const Link *find (const string &s) const;
+            [[nodiscard]] const Link *find (const string &s) const;
 
-            Link *advance (int n) const;
+            Link *find (const string &s);
 
-            Link *next () const;
+            [[nodiscard]] Link *advance (int n) const;
 
-            Link *previous () const;
+            [[nodiscard]] Link *next () const;
+
+            [[nodiscard]] Link *previous () const;
 
 //            void print_all ();
 

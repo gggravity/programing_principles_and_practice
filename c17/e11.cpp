@@ -17,13 +17,13 @@ int main (int argc, char *argv[])
     greek_gods = greek_gods->insert(new Link { "Mars" });
     greek_gods = greek_gods->insert(new Link { "Poseidon" });
 
-    Link *p = const_cast<Link *>(greek_gods->find("Mars"));
+    Link *p = greek_gods->find("Mars");
     if (p)
       {
         p->value = "Ares";
       }
 
-    Link *p2 = const_cast<Link *>(norse_gods->find("Zeus"));
+    Link *p2 = norse_gods->find("Zeus");
     if (p2)
       {
         if (p2 == norse_gods)

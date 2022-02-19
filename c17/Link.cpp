@@ -62,6 +62,20 @@ const Link *Link::find (const string &s) const
     return nullptr;
   }
 
+Link *Link::find (const string &s)
+  {
+    auto p = this;
+    while (p)
+      {
+        if (p->value == s)
+          {
+            return p;
+          }
+        p = p->succ;
+      }
+    return nullptr;
+  }
+
 Link *Link::advance (int n) const
   {
     auto p = this;

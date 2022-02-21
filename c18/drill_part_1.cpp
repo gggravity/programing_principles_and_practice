@@ -32,7 +32,7 @@ int main (int argc, char *argv[])
   {
     f(ga, 10);
 
-    auto aa = new int[] {  1, 2, 3, 5, 8, 13, 21, 34, 55, 89};
+    auto aa = new int[] { 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 };
 
     f(aa, 10);
   }

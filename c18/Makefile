@@ -10,9 +10,22 @@ CXXFLAGS = -Wall
 CXXFLAGS += -g
 
 # -std=gnu++20: enable GNU extensions in addition to C++20 features
-CXXFLAGS += -std=gnu++20
+CXXFLAGS += -std=gnu++17
 
-default: build_drill_part_2 run_drill_part_2
+default: build_all
+
+build_all: build_drill_part_1 \
+	   build_drill_part_2 \
+	   build_e1 \
+           build_e2 \
+	   build_e3 \
+	   build_e4 \
+	   build_e5 \
+	   build_e6 \
+	   build_e7 \
+	   build_e8 \
+	   build_e9 \
+	   build_e10
 
 build_drill_part_1:
 	$(CXX) $(CXXFLAGS) -o drill_part_1 drill_part_1.cpp

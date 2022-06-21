@@ -22,7 +22,7 @@ istream &read_word (istream &is, char *buffer, int max)
 {
   is.width (max);
   is >> buffer;
-  if (strlen (buffer) == max - 1)
+  if (strlen (buffer) == size_t(max - 1))
     {
       cerr << "String to long, breaking it up." << endl;
 

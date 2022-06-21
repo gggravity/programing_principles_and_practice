@@ -7,7 +7,7 @@ bool is_palindrome (const string &string)
     auto reverse_string = string;
     reverse(reverse_string.begin(), reverse_string.end());
 
-    for (int i { 0 } ; i < string.size() ; ++i)
+    for (size_t i { 0 } ; i < string.size() ; ++i)
       {
         if (string[i] != reverse_string[i])
           {

@@ -1,5 +1,0 @@
-if (EXISTS "C:/Users/martin.LAPLAND/CLionProjects/programing-principles-and-practice/c14/e8/test_tests-b12d07c.cmake")
-    include("C:/Users/martin.LAPLAND/CLionProjects/programing-principles-and-practice/c14/e8/test_tests-b12d07c.cmake")
-else ()
-    add_test(test_NOT_BUILT-b12d07c test_NOT_BUILT-b12d07c)
-endif ()

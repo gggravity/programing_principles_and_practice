@@ -1,7 +1,22 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+!Makefile
+
 **/cmake-build-debug
 **/cmake-build-debug-coverage
 **/Testing
 **/.idea
 *.exe
+*.gch
+*.o
 cmake_install.cmake
 **/CMakeFiles
+*~
+

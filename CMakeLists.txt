@@ -1,10 +1,13 @@
 cmake_minimum_required(VERSION 3.11)
 project(programing_principles_and_practice)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
-add_executable(programing_principles_and_practice
-        c18/e10.cpp)
+add_executable(drill c19/e2.cpp)
+
+add_executable(e1 c19/e1.cpp)
+
+add_executable(e2 c19/e2.cpp)
 
 #
 #include_directories(${CMAKE_SOURCE_DIR}/GUI)

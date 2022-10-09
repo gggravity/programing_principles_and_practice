@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <iostream>
+#include <memory>
 #include "God.h"
 
 using namespace std;
@@ -10,5 +12,5 @@ int main (int argc, char *argv[])
 
     print_all(god_list);
     cout << "\n";
-
+    cout << endl;
   }

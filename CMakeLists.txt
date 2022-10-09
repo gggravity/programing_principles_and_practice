@@ -3,11 +3,13 @@ project(programing_principles_and_practice)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(drill c19/drill.cpp)
+add_executable(drill c19/drill.cpp c19/e3.cpp)
 
 add_executable(e1 c19/e1.cpp)
 
 add_executable(e2 c19/e2.cpp)
+
+add_executable(e3 c19/e3.cpp)
 
 #
 #include_directories(${CMAKE_SOURCE_DIR}/GUI)

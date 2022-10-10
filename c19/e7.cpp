@@ -120,7 +120,6 @@ try
     
     print(vni3);
     
-    
     vector<Number<double>> vnd1 { Number<double>(1.1), Number<double>(2.2), Number<double>(3.3) };
     vector<Number<double>> vnd2 { Number<double>(3.3), Number<double>(2.2), Number<double>(11.1) };
     

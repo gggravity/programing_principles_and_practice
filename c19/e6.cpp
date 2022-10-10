@@ -6,6 +6,7 @@
 
 using namespace std;
 
+template < typename T >
 struct Number
     {
         Number ()
@@ -15,14 +16,14 @@ struct Number
           
           }
         
-        Number (int value)
+        explicit Number (T value)
             :
             value(value)
           {
           
           }
         
-        int value;
+        T value;
         
         bool operator< (const Number &rhs) const
           {
@@ -54,64 +55,64 @@ struct Number
             return !( rhs == *this );
           }
         
-        friend ostream &operator<< (ostream &os, const Number &an_int)
+        friend ostream &operator<< (ostream &os, const Number &number)
           {
-            os << an_int.value;
+            os << number.value;
             return os;
           }
         
-        friend const istream &operator>> (istream &is, Number &an_int)
+        friend const istream &operator>> (istream &is, Number &number)
           {
-            is >> an_int.value;
+            is >> number.value;
             return is;
           }
         
         Number operator+ (const Number &rhs) const
           {
-            return { value + rhs.value };
+            return Number { value + rhs.value };
           }
         
         Number operator- (const Number &rhs) const
           {
-            return { value - rhs.value };
+            return Number { value - rhs.value };
           }
         
         Number operator* (const Number &rhs) const
           {
-            return { value * rhs.value };
+            return Number { value * rhs.value };
           }
         
         Number operator/ (const Number &rhs) const
           {
-            return { value / rhs.value };
+            return Number { value / rhs.value };
           }
     };
 
 int main (int argc, char *argv[])
 try
   {
-    Number i1 { 40 };
-    Number i2 { 2 };
-    Number i3 { 4 };
-    Number i4 { 5 };
+    Number n1 { 44.4 };
+    Number n2 { 2.2 };
+    Number n3 { 4.4 };
+    Number n4 { 5.5 };
     
-    cout << i1 << " " << i2 << " " << i3 << " " << i4 << endl;
+    cout << n1 << " " << n2 << " " << n3 << " " << n4 << endl;
     
-    cout << i1 << " + " << i2 << " + " << i3 << " + " << i4 << " = " << i1 + i2 + i3 + i4 << endl;
+    cout << n1 << " + " << n2 << " + " << n3 << " + " << n4 << " = " << n1 + n2 + n3 + n4 << endl;
     
-    cout << i1 << " - " << i2 << " - " << i3 << " - " << i4 << " = " << i1 - i2 - i3 - i4 << endl;
+    cout << n1 << " - " << n2 << " - " << n3 << " - " << n4 << " = " << n1 - n2 - n3 - n4 << endl;
     
-    cout << i1 << " * " << i2 << " * " << i3 << " * " << i4 << " = " << i1 * i2 * i3 * i4 << endl;
+    cout << n1 << " * " << n2 << " * " << n3 << " * " << n4 << " = " << n1 * n2 * n3 * n4 << endl;
     
-    cout << i1 << " / " << i2 << " / " << i3 << " / " << i4 << " = " << i1 / i2 / i3 / i4 << endl;
+    cout << n1 << " / " << n2 << " / " << n3 << " / " << n4 << " = " << n1 / n2 / n3 / n4 << endl;
     
-    cout << "Please enter an integer value: " << endl;
+    cout << "Please enter a number: " << endl;
     
-    Number i_cin;
+    Number<int> number;
     
-    cin >> i_cin;
+    cin >> number;
     
-    cout << "The entered integer was: " << i_cin << endl;
+    cout << "The number was: " << number << endl;
     
     return EXIT_SUCCESS;
   }

@@ -34,7 +34,7 @@ int main (int argc, char *argv[])
 try
   {
     
-    Vector v;
+    Vector<double> v;
     
     v.push_back(12.3);
     v.push_back(32.1);

@@ -4,6 +4,7 @@
 
 #pragma once
 
+template < typename T >
 class Vector
   {
   public:
@@ -15,7 +16,7 @@ class Vector
       
       }
     
-    explicit Vector (int s) :
+    explicit Vector (size_t s) :
         sz { s },
         elem { new double[s] },
         space { s }
@@ -74,17 +75,17 @@ class Vector
         delete[] elem;
       }
     
-    double &operator[] (int n)
+    T &operator[] (size_t n)
       {
         return elem[n];
       }
     
-    const double &operator[] (int n) const
+    const T &operator[] (size_t n) const
       {
         return elem[n];
       }
     
-    void push_back (double d)
+    void push_back (T t)
       {
         if (space == 0)
           {
@@ -94,7 +95,7 @@ class Vector
           {
             reserve(2 * space);
           }
-        elem[sz] = d;
+        elem[sz] = t;
         ++sz;
       }
     
@@ -124,19 +125,19 @@ class Vector
         space = new_alloc;
       }
     
-    [[nodiscard]] int capacity () const
+    [[nodiscard]] size_t capacity () const
       {
         return space;
       }
     
-    [[nodiscard]] int size () const
+    [[nodiscard]] size_t size () const
       {
         return sz;
       }
   
   private:
-    int sz;
-    double *elem;
-    int space;
+    size_t sz;
+    T *elem;
+    size_t space;
     
   };

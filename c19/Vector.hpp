@@ -5,6 +5,31 @@
 #pragma once
 
 template < typename T >
+class allocator
+  {
+  public:
+    T *allocate (size_t n)
+      {
+        return (T *)malloc(n * sizeof(T));
+      }
+    
+    void deallocate (T *p, int n)
+      {
+        free(p);
+      }
+    
+    void construct (T *p, const T &v)
+      {
+       *p = v;
+      }
+    
+    void destroy (T *p)
+      {
+        p->~T();
+      }
+  };
+
+template < typename T, typename A = allocator<T>>
 class Vector
   {
   public:
@@ -85,7 +110,7 @@ class Vector
         return elem[n];
       }
     
-    void push_back (T t)
+    void push_back (const T &val)
       {
         if (space == 0)
           {
@@ -95,17 +120,22 @@ class Vector
           {
             reserve(2 * space);
           }
-        elem[sz] = t;
+        alloc.construct(&elem[sz], val);
         ++sz;
       }
     
-    void resize (int new_size)
+    void resize (int new_size, T val = T())
       {
         reserve(new_size);
         for (int i = sz ; i < new_size ; ++i)
           {
-            elem[i] = 0;
+            alloc.construct(&elem[i], val);
           }
+        for (int i = sz ; i < new_size ; ++i)
+          {
+            alloc.destroy(&elem[i]);
+          }
+        
         sz = new_size;
       }
     
@@ -115,12 +145,15 @@ class Vector
           {
             return;
           }
-        auto *p = new double[new_alloc];
+        auto *p = alloc.allocate(new_alloc);
         for (int i = 0 ; i < sz ; ++i)
           {
-            p[i] = elem[i];
+            alloc.construct(&p[i], elem[i]);
           }
-        delete[] elem;
+        for (int i = 0 ; i < sz ; ++i)
+          {
+            alloc.destroy(&elem[i]);
+          }
         elem = p;
         space = new_alloc;
       }
@@ -139,5 +172,5 @@ class Vector
     size_t sz;
     T *elem;
     size_t space;
-    
+    A alloc;
   };

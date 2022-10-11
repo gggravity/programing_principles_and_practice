@@ -20,7 +20,7 @@ class allocator
     
     void construct (T *p, const T &v)
       {
-       *p = v;
+        *p = v;
       }
     
     void destroy (T *p)
@@ -51,46 +51,46 @@ class Vector
             elem[i] = 0;
           }
       }
+
+//    Vector (const Vector &v)
+//      {
+//
+//      }
     
-    Vector (const Vector &v)
+    Vector &operator= (const Vector &other)
       {
-      
-      }
-    
-    Vector &operator= (const Vector &v)
-      {
-        if (this == &v)
+        if (this == &other)
           {
             return *this;
           }
         
-        if (v.sz <= space)
+        if (other.sz <= space)
           {
-            for (int i = 0 ; i < v.sz ; ++i)
+            for (int i = 0 ; i < other.sz ; ++i)
               {
-                elem[i] = v.elem[i];
+//                elem[i] = v.elem[i];
+                alloc.construct(&elem[i], other[i]);
               }
-            sz = v.sz;
+            sz = other.sz;
             return *this;
           }
-        
-        auto *p = new double[v.sz];
-        for (int i = 0 ; i < v.sz ; ++i)
+
+//        auto *p = new T[v.sz];
+        auto *ptr = alloc.allocate(other.sz);
+        for (int i = 0 ; i < other.sz ; ++i)
           {
-            p[i] = v.elem[i];
-            delete[] elem;
-            space = sz = v.sz;
-            elem = p;
-            return *this;
+//            p[i] = v.elem[i];
+            alloc.construct(&ptr[i], other[i]);
           }
+//        delete[] elem;
+        alloc.deallocate(elem, space);
+        
+        space = sz = other.sz;
+        elem = ptr;
+        return *this;
       }
     
     Vector (Vector &&v)
-      {
-      
-      }
-    
-    Vector &operator= (Vector &&v)
       {
       
       }

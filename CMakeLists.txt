@@ -19,6 +19,8 @@ add_executable(e6 c19/e6.cpp)
 
 add_executable(e7 c19/e7.cpp)
 
+add_executable(e8 c19/e8.cpp c19/Vector.hpp)
+
 #
 #include_directories(${CMAKE_SOURCE_DIR}/GUI)
 #link_directories(${CMAKE_SOURCE_DIR}/GUI)

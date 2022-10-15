@@ -10,6 +10,7 @@ add_executable(e1_c20 c20/e1.cpp)
 add_executable(e2_c20 c20/e2.cpp)
 
 add_executable(e3_c20 c20/e3.cpp)
+add_executable(e4_c20 c20/e4.cpp)
 
 add_executable(drill c19/drill.cpp c19/e3.cpp)
 

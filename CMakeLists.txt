@@ -27,6 +27,8 @@ add_executable(e10 c19/e10.cpp c19/Unique_ptr.hpp)
 
 add_executable(e11 c19/e11.cpp c19/Counted_ptr.hpp)
 
+add_executable(e12 c19/e12.cpp c19/File_handle.hpp)
+
 #
 #include_directories(${CMAKE_SOURCE_DIR}/GUI)
 #link_directories(${CMAKE_SOURCE_DIR}/GUI)

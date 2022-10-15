@@ -29,10 +29,11 @@ class Unique_ptr
         return ptr;
       }
     
-    T *operator* ()
+    T &operator* ()
       {
-        return ptr;
+        return *ptr;
       }
+    
     
     T *release ()
       {

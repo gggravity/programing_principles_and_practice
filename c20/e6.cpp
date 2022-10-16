@@ -2,9 +2,7 @@
 // Created by martin on 15-10-22.
 //
 
-#include <bits/stdc++.h>
-
-using namespace std;
+#include "../std_lib.h"
 
 using Line = vector<char>;
 
@@ -96,14 +94,47 @@ void print (Document &document)
       }
   }
 
+void find_and_replace (Document &document, const string &from, const string &to)
+  {
+    for (auto &iter : document.line)
+      {
+        // create a temp line as a string.
+        string line;
+        for (auto c : iter)
+          {
+            line.push_back(c);
+          }
+        
+        // check if the line contains "from".
+        auto index = line.find(from);
+        
+        // replace if it does.
+        if (index != string::npos)
+          {
+            line.replace(index, from.length(), to);
+          }
+        
+        // change the size of the iter to the line size and copy the temp line to the iter.
+        // the resize is needed to deal with '\n'.
+        iter.resize(line.size());
+        copy(line.begin(), line.end(), iter.begin());
+      }
+  }
+
 int main (int argc, char *argv[])
 try
   {
     Document document;
     
-    istringstream iss { "Some line with text\nline two\nanother line\none more!!!" };
+    istringstream iss { "Some line with text\nline two\nanother line\none more!!!\n" };
     
     iss >> document;
+    
+    print(document);
+    
+    find_and_replace(document, "line", "XXX");
+    
+    print_line_break();
     
     print(document);
     

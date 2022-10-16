@@ -30,10 +30,10 @@ class allocator
   };
 
 template < typename T, typename A = allocator<T>>
-class Vector
+class Debug_vector
   {
   public:
-    Vector () :
+    Debug_vector () :
         sz { 0 },
         elem { nullptr },
         space { 0 }
@@ -41,7 +41,7 @@ class Vector
       
       }
     
-    explicit Vector (size_t s) :
+    explicit Debug_vector (size_t s) :
         sz { s },
         elem { new double[s] },
         space { s }
@@ -57,7 +57,7 @@ class Vector
 //
 //      }
     
-    Vector &operator= (const Vector &other)
+    Debug_vector &operator= (const Debug_vector &other)
       {
         if (this == &other)
           {
@@ -90,12 +90,12 @@ class Vector
         return *this;
       }
     
-    Vector (Vector &&v)
+    Debug_vector (Debug_vector &&v)
       {
       
       }
     
-    ~Vector ()
+    ~Debug_vector ()
       {
         delete[] elem;
       }

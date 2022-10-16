@@ -42,7 +42,7 @@ void print (const vector<T> &v, int width = 3)
 int main (int argc, char *argv[])
 try
   {
-    Vector<double> vd;
+    Debug_vector<double> vd;
     
     vd.push_back(123.123);
     vd.push_back(321.321);
@@ -52,7 +52,7 @@ try
     
     print(vd, 8);
     
-    Vector<Test> vt;
+    Debug_vector<Test> vt;
     
     vt.push_back({ 1, 2 });
     vt.push_back({ 3, 4 });

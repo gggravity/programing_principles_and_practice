@@ -53,7 +53,7 @@ void print (Container container)
   }
 
 template < typename T >
-struct Vector : vector<T>
+struct Debug_vector : vector<T>
     {
         using size_type = typename vector<T>::size_type;
         
@@ -159,7 +159,7 @@ try
     delete jill_date;
     delete jill_date_copy;
     
-    Vector<string> vs { "A", "B", "C" };
+    Debug_vector<string> vs { "A", "B", "C" };
     
     vs.push_back("D");
 //    vs.resize(vs.size() + 1);

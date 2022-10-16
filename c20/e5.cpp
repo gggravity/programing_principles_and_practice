@@ -8,13 +8,13 @@
 using namespace std;
 
 template < typename T >
-struct Vector : std::vector<T>
+struct Debug_vector : std::vector<T>
     {
         using size_type = typename std::vector<T>::size_type;
         
         using std::vector<T>::vector;    // inheriting constructor
         
-        friend ostream &operator<< (ostream &os, const Vector &v)
+        friend ostream &operator<< (ostream &os, const Debug_vector &v)
           {
             cout << "{ ";
             for (auto iter { v.begin() } ; iter != v.end() ; ++iter)
@@ -38,7 +38,7 @@ struct Vector : std::vector<T>
           }
     };
 
-#define vector Vector
+#define vector Debug_vector
 
 int main (int argc, char *argv[])
 try

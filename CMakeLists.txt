@@ -3,41 +3,32 @@ project(programing_principles_and_practice)
 
 set(CMAKE_CXX_STANDARD 20)
 
+set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_RUNTIME OFF)
+
+find_package(Boost COMPONENTS regex date_time system filesystem thread graph program_options)
+
 add_executable(drill_c20 c20/drill.cpp)
-
 add_executable(e1_c20 c20/e1.cpp)
-
 add_executable(e2_c20 c20/e2.cpp)
-
 add_executable(e3_c20 c20/e3.cpp)
 add_executable(e4_c20 c20/e4.cpp)
+add_executable(e5_c20 c20/e5.cpp)
 
 add_executable(drill c19/drill.cpp c19/e3.cpp)
-
 add_executable(e1 c19/e1.cpp)
-
 add_executable(e2 c19/e2.cpp)
-
 add_executable(e3 c19/e3.cpp)
-
 add_executable(e4 c19/e4.cpp c19/Link.hpp)
-
 add_executable(e5 c19/e5.cpp)
-
 add_executable(e6 c19/e6.cpp)
-
 add_executable(e7 c19/e7.cpp)
-
 add_executable(e8 c19/e8.cpp c19/Vector.hpp)
-
 add_executable(e9 c19/e9.cpp c19/Vector.hpp)
-
 add_executable(e10 c19/e10.cpp c19/Unique_ptr.hpp)
-
 add_executable(e11 c19/e11.cpp c19/Counted_ptr.hpp)
-
 add_executable(e12 c19/e12.cpp c19/File_handle.hpp)
-
 add_executable(e13 c19/e13.cpp c19/Tracer.hpp)
 
 #

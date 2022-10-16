@@ -45,7 +45,9 @@ void print (Container container)
     cout << "{ ";
     for (auto iter { container.begin() } ; iter != container.end() ; ++iter)
       {
-        if (iter != container.end() - 1)
+        auto last = container.end();
+        last--;
+        if (iter != last)
           {
             cout << *iter << ", ";
           }

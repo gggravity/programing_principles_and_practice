@@ -105,6 +105,13 @@ struct Debug_vector : std::vector<T>
           }
     };
 
+template < typename Container1, typename Container2 >
+// requires Container<C>()
+void copy (Container1 &from_container, Container2 &to_container)
+  {
+    std::copy(from_container.begin(), from_container.end(), to_container.begin());
+  }
+
 template < typename Container >
 // requires Container<C>()
 void sort (Container &c)

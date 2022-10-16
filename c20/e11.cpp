@@ -2,7 +2,7 @@
 // Created by martin on 16-10-22.
 //
 
-#define DEBUG
+//#define DEBUG
 
 #include "../std_lib.h"
 
@@ -31,7 +31,7 @@ bool verify (const list<int> &list_of_ints, const vector<double> &vector_of_doub
         if (d != *iter2)
           {
 #ifdef DEBUG
-            cout << red("d: ") << d << " " << red("iter2: ") << *iter2 << endl;
+            cout << red(__func__) << ": "  << blue("d: ") << d << " " << blue("iter2: ") << *iter2 << endl;
 #endif
             return false;
           }

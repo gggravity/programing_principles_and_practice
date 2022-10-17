@@ -1,13 +1,16 @@
 cmake_minimum_required(VERSION 3.11)
 project(programing_principles_and_practice)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 
 set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
 
 find_package(Boost COMPONENTS regex date_time system filesystem thread graph program_options)
+
+add_executable(drill_c21 c21/drill.cpp)
+
 
 add_executable(drill_c20 c20/drill.cpp)
 add_executable(e1_c20 c20/e1.cpp)

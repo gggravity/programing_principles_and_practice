@@ -268,26 +268,26 @@ int main (int argc, char *argv[])
   {
     vector<Item> vi;
     vi = fill_from_file(vi);
-
+    
     run_exercises(vi);
-
+    
     print_line_break();
-
+    
     list<Item> li;
     li = fill_from_file(li);
-
+    
     run_exercises(li);
-
+    
     print_line_break();
     
     map<string, int> msi;
-
+    
     msi = insert_into_map(msi);
-
+    
     print(msi);
-
+    
     msi.clear();
-
+    
     print(msi);
     
     msi = fill_from_file(msi);

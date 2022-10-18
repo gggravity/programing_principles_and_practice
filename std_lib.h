@@ -16,6 +16,23 @@ void print_line_break (size_t n = 80)
     printf("\n");
   }
 
+void header (const string &header, bool first = false)
+  {
+    if (!first)
+      {
+        putchar('\n');
+      }
+    
+    printf("### %s ", header.c_str());
+    
+    for (auto i { header.size() + 5 } ; i <= 80 ; ++i)
+      {
+        putchar('#');
+      }
+    
+    printf("\n\n");
+  }
+
 // random number generators. See 24.7.
 
 inline std::default_random_engine &get_rand ()

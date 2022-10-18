@@ -12,6 +12,7 @@ find_package(Boost COMPONENTS regex date_time system filesystem thread graph pro
 add_executable(drill_c21 c21/drill.cpp)
 add_executable(c21_e1 c21/e1.cpp)
 add_executable(c21_e3 c21/e3.cpp)
+add_executable(c21_e4 c21/e4.cpp)
 
 add_executable(drill_c20 c20/drill.cpp)
 add_executable(e1_c20 c20/e1.cpp)

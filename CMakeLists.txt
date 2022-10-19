@@ -18,6 +18,7 @@ add_executable(c21_e6 c21/e6.cpp)
 add_executable(c21_e7 c21/e7.cpp)
 add_executable(c21_e8 c21/e8.cpp)
 add_executable(c21_e9 c21/e9.cpp)
+add_executable(c21_e10 c21/e10.cpp)
 
 add_executable(drill_c20 c20/drill.cpp)
 add_executable(e1_c20 c20/e1.cpp)

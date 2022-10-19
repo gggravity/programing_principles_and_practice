@@ -6,7 +6,7 @@
 
 bool not_alpha (char c)
   {
-    return !isalnum(c);
+    return !isalpha(c);
   }
 
 template < typename T1, typename T2 >

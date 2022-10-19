@@ -33,6 +33,20 @@ void header (const string &header, bool first = false)
     printf("\n\n");
   }
 
+vector<string> split (const string &text, char delimiter = ' ')
+  {
+    vector<string> words { };
+    
+    istringstream iss { text };
+    string s;
+    while (getline(iss, s, delimiter))
+      {
+        words.push_back(s);
+      }
+    
+    return words;
+  }
+  
 // random number generators. See 24.7.
 
 inline std::default_random_engine &get_rand ()

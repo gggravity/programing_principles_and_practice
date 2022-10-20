@@ -13,7 +13,4 @@ Rose;Rose avenue 9;101-101-101;Orange;0.98;6
 Rose;Rose avenue 9;101-101-101;Pineapple;2.28;1
 Rose;Rose avenue 9;101-101-101;Apple;1.48;33
 Rose;Rose avenue 9;101-101-101;Peach;0.48;30
-John;Baker street 1;123-123-000;Apple;99.98;100
-Dr. Who;Space;000-000-000;Screwdriver;-1;1
-Tanja;In town;123-123-432;Apple;1;99
-Tom;Town;000-321-312;Orange;99.98;4
+John;Bakerstreet;123-123-000;Apple;19.99;100

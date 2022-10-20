@@ -1,13 +1,18 @@
 cmake_minimum_required(VERSION 3.11)
 project(programing_principles_and_practice)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
 
 set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
 
 find_package(Boost COMPONENTS regex date_time system filesystem thread graph program_options)
+find_package(PkgConfig)
+
+pkg_check_modules(GTKMM gtkmm-4.0)
+link_directories(${GTKMM_LIBRARY_DIRS})
+include_directories(${GTKMM_INCLUDE_DIRS})
 
 add_executable(drill_c21 c21/drill.cpp)
 add_executable(c21_e1 c21/e1.cpp)
@@ -19,6 +24,7 @@ add_executable(c21_e7 c21/e7.cpp)
 add_executable(c21_e8 c21/e8.cpp)
 add_executable(c21_e9 c21/e9.cpp)
 add_executable(c21_e10 c21/e10.cpp)
+add_executable(c21_e11 c21/e11.cpp)
 
 add_executable(drill_c20 c20/drill.cpp)
 add_executable(e1_c20 c20/e1.cpp)
@@ -49,6 +55,8 @@ add_executable(e11 c19/e11.cpp c19/Counted_ptr.hpp)
 add_executable(e12 c19/e12.cpp c19/File_handle.hpp)
 add_executable(e13 c19/e13.cpp c19/Tracer.hpp)
 
+
+target_link_libraries(c21_e11 ${GTKMM_LIBRARIES})
 #
 #include_directories(${CMAKE_SOURCE_DIR}/GUI)
 #link_directories(${CMAKE_SOURCE_DIR}/GUI)

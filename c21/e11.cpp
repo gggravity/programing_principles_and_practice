@@ -45,7 +45,7 @@ struct Line
       
     };
 
-auto load_new_data (const string &filename)
+auto load_data (const string &filename)
   {
     vector<Line> lines;
     ifstream ifs { filename };
@@ -225,7 +225,7 @@ struct Window : public Gtk::Window
         void on_load_button_clicked ()
           {
             cout << "Load button clicked!" << endl;
-            auto results { load_new_data(filename) };
+            auto results { load_data(filename) };
             
             refTreeModel->clear();
             

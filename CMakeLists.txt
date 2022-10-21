@@ -25,6 +25,7 @@ add_executable(c21_e8 c21/e8.cpp)
 add_executable(c21_e9 c21/e9.cpp)
 add_executable(c21_e10 c21/e10.cpp)
 add_executable(c21_e11 c21/e11.cpp)
+add_executable(c21_e12 c21/e12.cpp)
 
 add_executable(drill_c20 c20/drill.cpp)
 add_executable(e1_c20 c20/e1.cpp)
@@ -56,8 +57,11 @@ add_executable(e12 c19/e12.cpp c19/File_handle.hpp)
 add_executable(e13 c19/e13.cpp c19/Tracer.hpp)
 
 
+
+
 target_link_libraries(c21_e11 ${GTKMM_LIBRARIES})
-#
+target_link_libraries(c21_e12 ${GTKMM_LIBRARIES})
+
 #include_directories(${CMAKE_SOURCE_DIR}/GUI)
 #link_directories(${CMAKE_SOURCE_DIR}/GUI)
 #

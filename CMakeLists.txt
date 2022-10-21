@@ -14,6 +14,8 @@ pkg_check_modules(GTKMM gtkmm-4.0)
 link_directories(${GTKMM_LIBRARY_DIRS})
 include_directories(${GTKMM_INCLUDE_DIRS})
 
+add_executable(drill_c22 c22/drill.cpp)
+
 add_executable(drill_c21 c21/drill.cpp)
 add_executable(c21_e1 c21/e1.cpp)
 add_executable(c21_e3 c21/e3.cpp)

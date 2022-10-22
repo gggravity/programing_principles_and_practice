@@ -37,14 +37,21 @@ bool is_discovery (const string &card_string)
 bool is_american_express (const string &card_string)
   {
     vector<string> prefixes { "34", "37" };
-    for (auto const &prefix : prefixes)
-      {
-        if (is_prefix(card_string, prefix))
-          {
-            return true;
-          }
-      }
-    return false;
+    
+    return any_of(prefixes.begin(), prefixes.end(),
+                  [&] (const string &prefix)
+                    {
+                        return is_prefix(card_string, prefix);
+                    });
+    
+//    for (auto const &prefix : prefixes)
+//      {
+//        if (is_prefix(card_string, prefix))
+//          {
+//            return true;
+//          }
+//      }
+//    return false;
   }
 
 int main (int argc, char *argv[])

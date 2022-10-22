@@ -16,6 +16,7 @@ include_directories(${GTKMM_INCLUDE_DIRS})
 
 add_executable(drill_c23 c23/drill.cpp)
 add_executable(c23_e1 c23/e1.cpp)
+add_executable(c23_e2 c23/e2.cpp)
 
 add_executable(drill_c21 c21/drill.cpp)
 add_executable(c21_e1 c21/e1.cpp)

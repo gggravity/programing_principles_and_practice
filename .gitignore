@@ -1,3 +1,4 @@
+http://happy.emu.id.au/pipermail/foxhunt.mbox/foxhunt.mbox
 # Ignore all
 *
 
@@ -19,4 +20,5 @@
 cmake_install.cmake
 **/CMakeFiles
 *~
+*.mbox
 

@@ -21,6 +21,7 @@ add_executable(c23_e3 c23/e3.cpp)
 add_executable(c23_e6 c23/e6.cpp)
 add_executable(c23_e7 c23/e7.cpp)
 add_executable(c23_e9 c23/e9.cpp)
+add_executable(c23_e10 c23/e10.cpp)
 
 add_executable(drill_c21 c21/drill.cpp)
 add_executable(c21_e1 c21/e1.cpp)

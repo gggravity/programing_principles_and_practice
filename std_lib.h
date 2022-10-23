@@ -23,12 +23,12 @@ void header (const string &header, bool first = false)
         putchar('\n');
       }
     
-    printf("### %s ", header.c_str());
+    printf("### %s ###", header.c_str());
     
-    for (auto i { header.size() + 5 } ; i <= 80 ; ++i)
-      {
-        putchar('#');
-      }
+//    for (auto i { header.size() + 5 } ; i <= 80 ; ++i)
+//      {
+//        putchar('#');
+//      }
     
     printf("\n\n");
   }

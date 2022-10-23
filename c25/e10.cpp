@@ -52,6 +52,6 @@ int main (int argc, char *argv[])
   print_bitfield (ppn);
 
   header ("part 3 - skipped");
-  
+
   return EXIT_SUCCESS;
 }

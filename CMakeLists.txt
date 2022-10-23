@@ -18,6 +18,7 @@ add_executable(drill_c25 c25/drill.cpp)
 add_executable(c25_e1 c25/e1.cpp)
 add_executable(c25_e3 c25/e3.cpp)
 add_executable(c25_e7 c25/e7.cpp)
+add_executable(c25_e8 c25/e8.cpp)
 
 add_executable(drill_c24 c24/drill.cpp c24/Matrix.h)
 add_executable(c24_e1 c24/e1.cpp)
@@ -76,7 +77,6 @@ add_executable(e10 c19/e10.cpp c19/Unique_ptr.hpp)
 add_executable(e11 c19/e11.cpp c19/Counted_ptr.hpp)
 add_executable(e12 c19/e12.cpp c19/File_handle.hpp)
 add_executable(e13 c19/e13.cpp c19/Tracer.hpp)
-
 
 
 

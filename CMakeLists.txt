@@ -19,6 +19,7 @@ add_executable(c25_e1 c25/e1.cpp)
 add_executable(c25_e3 c25/e3.cpp)
 add_executable(c25_e7 c25/e7.cpp)
 add_executable(c25_e8 c25/e8.cpp)
+add_executable(c25_e9 c25/e9.cpp)
 
 add_executable(drill_c24 c24/drill.cpp c24/Matrix.h)
 add_executable(c24_e1 c24/e1.cpp)

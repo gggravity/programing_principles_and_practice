@@ -4,15 +4,6 @@
 
 #include "../std_lib.h"
 
-//#include <bits/stdc++.h>
-//
-//using namespace std;
-
-void failed ()
-{
-//  cout << terminal_colors::red ("failed") << endl;
-}
-
 struct Test
 {
     string label;
@@ -20,6 +11,31 @@ struct Test
     vector<int> sequence;
     bool result { };
 };
+
+void failed ()
+{
+  cout << terminal_colors::red ("failed") << endl;
+}
+
+void print_test_result (const Test &test, bool failure)
+{
+  string test_string;
+
+  if (failure)
+    {
+      test_string.append (terminal_colors::red ("failure: "));
+    }
+  else
+    {
+      test_string.append (terminal_colors::green ("success: "));
+    }
+
+  test_string.append ("binary_search: " + to_string (test.sequence.size ())
+                      + " elements," + " val == " + to_string (test.value)
+                      + " -> " + to_string (test.result));
+
+  cout << test_string << endl;
+}
 
 ostream &operator<< (ostream &os, const Test &test)
 {
@@ -31,7 +47,6 @@ istream &operator>> (istream &is, Test &test)
 {
   char first;
   char last;
-  double dbl;
 
   char first_vector;
   char last_vector;
@@ -68,20 +83,12 @@ int test_all (istream &is)
                                    test.value) };
       if (result != test.result)
         {
-          cout << terminal_colors::red ("failure: test" + test.label
-                                        + " binary_search: " + to_string (test.sequence.size ())
-                                        + " elements," + " val == " + to_string (test.value)
-                                        + " -> " + to_string (test.result));
-          cout << endl;
+          print_test_result (test, true);
           error_count++;
         }
       else
         {
-          cout << terminal_colors::green ("success: test" + test.label
-                                          + " binary_search: " + to_string (test.sequence.size ())
-                                          + " elements," + " val == " + to_string (test.value)
-                                          + " -> " + to_string (test.result));
-          cout << endl;
+          print_test_result (test, false);
         }
     }
   return error_count;
@@ -89,7 +96,6 @@ int test_all (istream &is)
 
 int main (int argc, char *argv[])
 {
-  /*
   vector<int> v { 1, 2, 3, 5, 8, 12, 21 };
   if (!binary_search (v.begin (), v.end (), 1))
     {
@@ -126,7 +132,6 @@ int main (int argc, char *argv[])
           failed ();
         }
     }
-*/
   ifstream ifs { "../c26/tests.txt" };
   auto errors { test_all (ifs) };
   cout << "numbers of errors " << errors << endl;

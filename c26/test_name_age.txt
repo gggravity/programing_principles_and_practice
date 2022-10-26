@@ -1,0 +1,9 @@
+{ ( "Jack" , 40 ) { ( "Jack" , 40 ) ( "Jack" , 73 ) ( "Jane" , 23 ) ( "Jill" , 19 ) ( "Jill" , 45 ) ( "John" , 10 ) ( "John" , 40 ) } 1 }
+{ ( "Jane" , 30 ) {  } 0 }
+{ ( "Jill" , 45 ) { ( "Jill" , 45 ) } 1 }
+{ ( "John" , 20 ) { ( "John" , 21 ) } 0 }
+{ ( "Jack" , 12 ) { ( "Jack" , 12 ) ( "Jack" , 42 ) ( "Jack" , 42 ) ( "Jack" , 52 ) } 1 }
+{ ( "Jane" , 43 ) { ( "Jane" , 13 ) ( "Jane" , 23 ) ( "Jane" , 33 ) ( "Jane" , 53 ) ( "Jill" , 43 ) } 0 }
+{ ( "Jill" , 19 ) { ( "Jill" , 19 ) ( "Jill" , 19 ) ( "Jill" , 19 ) ( "Jill" , 19 ) ( "Jill" , 19 ) ( "Jill" , 19 ) ( "Jill" , 19 ) } 1 }
+{ ( "John" , 10 ) { ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 10 ) ( "John" , 22 ) } 1 }
+{ ( "Jack" , 37 ) { ( "Jack" , 37 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) ( "Jack" , 73 ) } 1 }

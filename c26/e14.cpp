@@ -8,7 +8,7 @@ auto get_random (int n)
   uniform_int_distribution<> dist_char (32, 126);
   uniform_int_distribution<> dist_length (0, 100);
 
-  vector<string> vs;
+  map<string, int> string_int_map;
 
   auto len = dist_length (gen);
   for (int i = 0 ; i < n ; i++)
@@ -20,19 +20,20 @@ auto get_random (int n)
           auto c = (char)rnd;
           s.push_back (c);
         }
-      vs.emplace_back (s);
+      string_int_map.insert ({ s, 1 });
     }
 
-  return vs;
+  return string_int_map;
 }
 
 void test (int n)
 {
+
   auto t1 { system_clock::now () };
 
   auto test { get_random (n) };
 
-  sort (test.begin (), test.end ());
+//  sort (test.begin (), test.end ());
 
   auto t2 { system_clock::now () };
 
@@ -44,10 +45,10 @@ void test (int n)
 
 int main (int argc, char *argv[])
 {
-  header ("500.000 strings test");
+  header ("500.000 strings in map test");
   test (500000);
 
-  header ("5.000.000 strings test");
+  header ("5.000.000 strings in map test");
   test (5000000);
 
   return EXIT_SUCCESS;

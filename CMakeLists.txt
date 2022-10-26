@@ -19,6 +19,7 @@ add_executable(c26_e1 c26/e1.cpp)
 add_executable(c26_e3 c26/e3.cpp)
 add_executable(c26_e12 c26/e12.cpp)
 add_executable(c26_e13 c26/e13.cpp)
+add_executable(c26_e14 c26/e14.cpp)
 
 add_executable(drill_c25 c25/drill.cpp)
 add_executable(c25_e1 c25/e1.cpp)

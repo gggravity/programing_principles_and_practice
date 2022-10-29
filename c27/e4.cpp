@@ -5,17 +5,20 @@
 #include "../std_lib.h"
 #include "Linked_list.hpp"
 
+using Link = Linked_list<string>::Link;
+
 int main (int argc, char *argv[])
 {
   int count = 0;
   Linked_list<string> names;
   Linked_list<string>::Link *current;
 
-  auto norah = Linked_list<string>::Link ("Norah");
-  auto annemarie = Linked_list<string>::Link ("Annemarie");
-  auto kris = Linked_list<string>::Link ("Kris");
-  auto karl = Linked_list<string>::Link ("Karl");
-  auto john = Linked_list<string>::Link ("john");
+  auto norah = Link ("Norah");
+  auto annemarie = Link ("Annemarie");
+  auto kris = Link ("Kris");
+  auto karl = Link ("Karl");
+  auto john = Link ("john");
+
   names.push_back (&norah);
   names.push_back (&annemarie);
   names.push_back (&kris);

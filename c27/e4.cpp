@@ -9,38 +9,26 @@ using Link = Linked_list<string>::Link;
 
 int main (int argc, char *argv[])
 {
-  int count = 0;
   Linked_list<string> names;
-  Linked_list<string>::Link *current;
 
-  auto norah = Link ("Norah");
-  auto annemarie = Link ("Annemarie");
-  auto kris = Link ("Kris");
-  auto karl = Link ("Karl");
-  auto john = Link ("john");
-
-  names.push_back (&norah);
-  names.push_back (&annemarie);
-  names.push_back (&kris);
-  names.push_back (&karl);
-  names.push_back (&john);
-
+  names.push_back (new Link ("Norah"));
+  names.push_back (new Link ("Annemarie"));
+  names.push_back (new Link ("Kris"));
+  names.push_back (new Link ("Karl"));
+  names.push_back (new Link ("john"));
 
 //  erase (&names, advance (names.first, 1));
-  auto amanda = Linked_list<string>::Link ("Ananda");
-  names.push_front (&amanda);
+  names.push_front (new Link ("Ananda"));
 
   auto insert_at = names.advance (names.first, 2);
 
   cout << "insert_at: " << *insert_at << endl;
 
-  auto max = Linked_list<string>::Link ("Max");
-  names.insert (insert_at, &max);
+  names.insert (insert_at, new Link ("Max"));
 
-  current = names.first;
-  for (; current != nullptr ; current = current->next)
+  auto current = names.first;
+  for (int count { 0 } ; current != nullptr ; current = current->next, ++count)
     {
-      count++;
       cout << "element " << count << " : " << *current << endl;
     }
 

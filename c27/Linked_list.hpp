@@ -35,54 +35,62 @@ struct Linked_list
 
     }
 
-    virtual ~Linked_list () = default;
-//    void clear (List *list);
-//    void destroy (List *list);
-
-    void push_back (Link *new_node)
+    virtual ~Linked_list ()
     {
-      auto new_last = last;
-      if (new_last)
+      auto ptr = first;
+      while (ptr)
         {
-          new_last->next = new_node;
-          new_node->prev = new_last;
+          auto next = ptr->next;
+          delete (ptr);
+          ptr = next;
+        }
+    }
+
+    void push_back (Link *node)
+    {
+      auto old_last = last;
+      if (old_last)
+        {
+          old_last->next = node;
+          node->prev = old_last;
         }
       else
         {
-          first = new_node;
-          new_node->prev = nullptr;
+          first = node;
+          node->prev = nullptr;
         }
-      last = new_node;
-      new_node->next = nullptr;
+      last = node;
+      node->next = nullptr;
     }
-    void push_front (Link *new_node)
+    void push_front (Link *node)
     {
-      new_node->next = first;
-      first = new_node;
+      node->next = first;
+      first = node;
     }
 
-    void insert (Link *previous_node, Link *new_node)
+    void insert (Link *node_to_insert_after, Link *node)
     {
-      new_node->next = previous_node->next;
-      previous_node->next = new_node;
+      node->next = node_to_insert_after->next;
+      node_to_insert_after->next = node;
 
-      Link *next_node = previous_node->next;
-      new_node->prev = next_node->prev;
-      new_node->prev = new_node;
+      Link *next_node = node_to_insert_after->next;
+      node->prev = next_node->prev;
+      node->prev = node;
     }
-    Link *erase (Link *new_node)
+
+    Link *erase (Link *node)
     {
-      if (new_node == nullptr)
+      if (node == nullptr)
         {
           return nullptr;
         }
-      if (new_node == first)
+      if (node == first)
         {
-          if (new_node->next)
+          if (node->next)
             {
-              first = new_node->next;
-              new_node->next->prev = nullptr;
-              return new_node->next;
+              first = node->next;
+              node->next->prev = nullptr;
+              return node->next;
             }
           else
             {
@@ -90,12 +98,12 @@ struct Linked_list
               return nullptr;
             }
         }
-      else if (new_node == last)
+      else if (node == last)
         {
-          if (new_node->prev)
+          if (node->prev)
             {
-              last = new_node->prev;
-              new_node->prev->next = nullptr;
+              last = node->prev;
+              node->prev->next = nullptr;
             }
           else
             {
@@ -105,15 +113,15 @@ struct Linked_list
         }
       else
         {
-          new_node->next->prev = new_node->prev;
-          new_node->prev->next = new_node->next;
-          return new_node->next;
+          node->next->prev = node->prev;
+          node->prev->next = node->next;
+          return node->next;
         }
     }
 
     Link *advance (Link *node, int n)
     {
-      for (int i = 0 ; i < n ; ++i)
+      for (int i { 0 } ; i < n ; ++i)
         {
           node = node->next;
         }

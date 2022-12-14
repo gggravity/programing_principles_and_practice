@@ -19,4 +19,3 @@ catch (exception &e)
     cerr << "Error: " << e.what() << endl;
     return EXIT_FAILURE;
   }
-

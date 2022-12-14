@@ -4,51 +4,65 @@
 
 #pragma once
 
-template < typename Elem >
+template < typename T >
 struct Link
     {
         Link *prev;
         Link *succ;
-        Elem val;
+        T val;
     };
 
-template < typename Elem >
+template < typename T >
 class List
   {
   public:
-    Link<Elem> *first;
+    explicit List (Link<T> *first = nullptr, Link<T> *last = nullptr) :
+        first(first),
+        last(last)
+      { }
     
-    Link<Elem> *last;
+    Link<T> *first;
+    
+    Link<T> *last;
     
     class iterator;
     
-    iterator begin ();
+    iterator begin ()
+      {
+        return iterator(first);
+      }
     
-    iterator end ();
+    iterator end ()
+      {
+        return iterator(last);
+      }
     
-    iterator insert (iterator p, const Elem &v);
+    iterator insert (iterator p, const T &v);
     
     iterator erase (iterator p);
     
-    void push_back (const Elem &v);
+    void push_back (const T &v);
     
-    void push_front (const Elem &v);
+    void push_front (const T &v)
+      {
+        first = new Link<T>(nullptr, nullptr, v);
+      }
     
     void pop_front ();
     
     void pop_back ();
     
-    Elem &front ();
+    T &front ();
     
-    Elem &back ();
+    T &back ();
     
   };
 
-template < typename Elem >
-class List<Elem>::iterator
+template < typename T >
+class List<T>::iterator
   {
   public:
-    explicit iterator (Link<Elem> *p) :
+    explicit iterator (Link<T> *p) :
         curr { p }
       {
       
@@ -66,7 +80,7 @@ class List<Elem>::iterator
         return *this;
       }
     
-    Elem &operator* (const iterator &b) const
+    T &operator* (const iterator &b) const
       {
         return curr->val;
       }
@@ -82,5 +96,19 @@ class List<Elem>::iterator
       }
   
   private:
-    Link<Elem> *curr;
+    Link<T> *curr;
   };
+
+template < class Iterator >
+Iterator high (Iterator first, Iterator last)
+  {
+    Iterator high = first;
+    for (Iterator p = first ; p != last ; ++p)
+      {
+        if (*high< * p)
+          {
+            high = p;
+          }
+      }
+    return high;
+  }

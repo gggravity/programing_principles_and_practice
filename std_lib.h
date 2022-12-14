@@ -16,6 +16,37 @@ void print_line_break (size_t n = 80)
     printf("\n");
   }
 
+void header (const string &header, bool first = false)
+  {
+    if (!first)
+      {
+        putchar('\n');
+      }
+    
+    printf("### %s ###", header.c_str());
+    
+//    for (auto i { header.size() + 5 } ; i <= 80 ; ++i)
+//      {
+//        putchar('#');
+//      }
+    
+    printf("\n\n");
+  }
+
+vector<string> split (const string &text, char delimiter = ' ')
+  {
+    vector<string> words { };
+    
+    istringstream iss { text };
+    string s;
+    while (getline(iss, s, delimiter))
+      {
+        words.push_back(s);
+      }
+    
+    return words;
+  }
+  
 // random number generators. See 24.7.
 
 inline std::default_random_engine &get_rand ()
@@ -140,4 +171,4 @@ auto find_if (Container &c, Predicate predicate)
     return std::find_if(c.begin(), c.end(), predicate);
   }
 
-#define vector Debug_vector
+//#define vector Debug_vector

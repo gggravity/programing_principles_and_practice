@@ -1,0 +1,10 @@
+lecture 21
+class 11
+struct 1
+string 3
+speech 2
+room 12
+school 15
+job 44
+computer 4
+music 19

@@ -1,0 +1,36 @@
+[31mfailed[0m
+[31mfailed[0m
+[32msuccess: [0mbinary_search: 7 elements, val == 1 -> 1
+[32msuccess: [0mbinary_search: 7 elements, val == 5 -> 1
+[32msuccess: [0mbinary_search: 7 elements, val == 8 -> 1
+[32msuccess: [0mbinary_search: 7 elements, val == 21 -> 1
+[32msuccess: [0mbinary_search: 7 elements, val == -7 -> 0
+[32msuccess: [0mbinary_search: 7 elements, val == 4 -> 0
+[32msuccess: [0mbinary_search: 7 elements, val == 22 -> 0
+[32msuccess: [0mbinary_search: 0 elements, val == 1 -> 0
+[32msuccess: [0mbinary_search: 1 elements, val == 1 -> 1
+[32msuccess: [0mbinary_search: 1 elements, val == 0 -> 0
+[32msuccess: [0mbinary_search: 1 elements, val == 2 -> 0
+[32msuccess: [0mbinary_search: 4 elements, val == 1 -> 1
+[32msuccess: [0mbinary_search: 4 elements, val == 4 -> 1
+[32msuccess: [0mbinary_search: 4 elements, val == 2 -> 1
+[32msuccess: [0mbinary_search: 4 elements, val == 3 -> 1
+[32msuccess: [0mbinary_search: 4 elements, val == 0 -> 0
+[32msuccess: [0mbinary_search: 4 elements, val == 5 -> 0
+[32msuccess: [0mbinary_search: 5 elements, val == 1 -> 1
+[32msuccess: [0mbinary_search: 5 elements, val == 5 -> 1
+[32msuccess: [0mbinary_search: 5 elements, val == 3 -> 1
+[32msuccess: [0mbinary_search: 5 elements, val == 0 -> 0
+[32msuccess: [0mbinary_search: 5 elements, val == 6 -> 0
+[32msuccess: [0mbinary_search: 7 elements, val == 1 -> 1
+[32msuccess: [0mbinary_search: 7 elements, val == 0 -> 0
+[32msuccess: [0mbinary_search: 7 elements, val == 2 -> 0
+[32msuccess: [0mbinary_search: 13 elements, val == 0 -> 1
+[32msuccess: [0mbinary_search: 13 elements, val == 1 -> 1
+[32msuccess: [0mbinary_search: 13 elements, val == -1 -> 0
+[32msuccess: [0mbinary_search: 13 elements, val == 2 -> 0
+[32msuccess: [0mbinary_search: 13 elements, val == 0 -> 1
+[32msuccess: [0mbinary_search: 13 elements, val == 1 -> 1
+[32msuccess: [0mbinary_search: 13 elements, val == -1 -> 0
+[32msuccess: [0mbinary_search: 13 elements, val == 2 -> 0
+numbers of errors 0

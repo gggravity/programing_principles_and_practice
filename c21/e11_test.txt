@@ -1,0 +1,16 @@
+Lily;Little road 1;333-222-111;Pineapple;0.98;30
+Lily;Little road 1;333-222-111;Banana;1.98;3
+Lily;Little road 1;333-222-111;Orange;1.28;10
+Lily;Little road 1;333-222-111;Peach;0.48;30
+Lily;Little road 1;333-222-111;Apple;2.48;35
+Mark;Market street 101;111-222-333;Banana;0.98;10
+Mark;Market street 101;111-222-333;Orange;1.98;16
+Mark;Market street 101;111-222-333;Pineapple;1.28;10
+Mark;Market street 101;111-222-333;Apple;0.48;3
+Mark;Market street 101;111-222-333;Peach;2.48;1
+Rose;Rose avenue 9;101-101-101;Banana;1.98;10
+Rose;Rose avenue 9;101-101-101;Orange;0.98;6
+Rose;Rose avenue 9;101-101-101;Pineapple;2.28;1
+Rose;Rose avenue 9;101-101-101;Apple;1.48;33
+Rose;Rose avenue 9;101-101-101;Peach;0.48;30
+John;Bakerstreet;123-123-000;Apple;19.99;100

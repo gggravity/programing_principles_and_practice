@@ -1,0 +1,10 @@
+Mark 1 123.123
+Anna 2 312.321
+Peter 3 32.550
+Poul 4 94.354
+Karen 5 84.564
+Lis 6 83.224
+Ark 7 53.131
+John 8 32.665
+Jane 9 77.946
+Donald 10 32.345

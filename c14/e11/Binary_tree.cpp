@@ -20,8 +20,12 @@ Binary_tree::Binary_tree ()
 
 void Binary_tree::print (unique_ptr<Node> &node, int indent)
   {
+//    static int line { 0 };
+//    cout << "Line " << line << endl;
     if (node != nullptr)
       {
+
+        printf("%02d\n", node->data);
 
         if (node->left)
           {
@@ -35,8 +39,9 @@ void Binary_tree::print (unique_ptr<Node> &node, int indent)
           {
             cout << setw(indent) << ' ';
           }
-        printf("%02d\n", node->data);
+
       }
+//    line++;
   }
 
 void Binary_tree::create_levels (unique_ptr<Node> &node, int levels, int depth)
@@ -57,6 +62,11 @@ void Binary_tree::create_levels (unique_ptr<Node> &node, int levels, int depth)
 
     create_levels(node->left, levels, depth);
     create_levels(node->right, levels, depth);
+  }
+
+void Binary_tree::draw_lines () const
+  {
+    Shape::draw_lines();
   }
 
 

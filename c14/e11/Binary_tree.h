@@ -5,7 +5,7 @@
 #ifndef _BINARY_TREE_H_
 #define _BINARY_TREE_H_
 
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 #include "Graph.h"
 
 using namespace std;
@@ -19,12 +19,10 @@ struct Node
 
         explicit Node (int data) : data(data)
           { }
-
     };
 
-class Binary_tree : public Shape
+struct Binary_tree : Shape
       {
-      public:
             Binary_tree ();
 
 //            explicit Binary_tree (int levels);
@@ -33,9 +31,12 @@ class Binary_tree : public Shape
 
             static void print (unique_ptr<Node> &node, int indent = 0);
 
-            unique_ptr<struct Node> root = make_unique<Node>(1);
+            unique_ptr<struct Node> root = make_unique<Node>(counter);
 
             int counter = 1;
+
+      protected:
+            virtual void draw_lines () const override;
 
       private:
 

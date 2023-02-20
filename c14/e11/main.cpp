@@ -22,7 +22,7 @@ try
 //    root->left->left = make_unique<Node>(4);
 //    root->left->left->left = make_unique<Node>(5);
 //    root->left->left->left->left = make_unique<Node>(6);
-    btree.create_levels(btree.root, 4);
+    btree.create_levels(btree.root, 2);
 
 //    cout << btree.root->data << endl;
 //    cout << btree.root->left->data << " " << btree.root->right->data << endl;
